@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <title>Lieferando</title>
     <meta charset="UTF-8">
@@ -7,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=".\style\index.css">
     <link rel="stylesheet" href=".\node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <script src=".\script\main.js">    </script>
 </head>
+
 <body>
     <div class="topnav">
         <img height="60%" src=".\img\logo.jpg" alt="">
@@ -15,28 +18,126 @@
     </div>
 
     <div class="content_box">
+
+        <div class="restaurant_box">
+            <div>
+                <img class="restaurant_box_img" src=".\img\bg_pizza.jpg" alt="">
+                <div class="d-flex justify-content-between p-3">
+                    <div>
+                        <p>Restaurant-Top-Placeholder</p>
+                        <div>
+                            STERNE BEWERTUNG
+                        </div>
+                    </div>
+                    <div>
+                        <button>x</button>
+                        <button>herz</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="category_bar p-3">
+                <p>searchbar-Placeholder</p>
+            </div>
+
+            <div class="dishes p-4">
+                <div onclick="visibilityChange('bottom_dish_1')"
+                    class="border p-3 d-flex flex-row justify-content-between dish_hover">
+                    <div d-flex flex-column justify-content-between>
+                        <div class="headline_medium bold pb-1"> Pizza Salami</div>
+                        <div class="pb-3">Salami und Teig</div>
+                        <div class="italic pb-3">Wahl aus: mit Ananas, mit Artischocken, mit Champignons, mit Ei, mit
+                            Gewürzen, scharf, mit Gorgonzola und mehr.</div>
+                        <div class="ftc_orange bold headline_medium">9,99€</div>
+                    </div>
+
+                    <div class="bold position-relative border d-flex align-content-center justify-content-center "
+                        style="padding: 0.7rem!important; height:40px; width:40px; top:-17px; right:-17px;">
+                        <img id="bottom_dish_1_btn" src=".\img\plus.png" alt="">
+                    </div>
+
+                </div>
+                <div id="bottom_dish_1" class=" p-3" style="  width: 100%; background-color: rgba(0, 0, 0,0.05);">
+                    <div>
+                        <div class="pl-5 pr-5 ">
+                            <div class="pt-2 pb-1">
+                                Ihre Extras:
+                            </div>
+                            <div class="d-flex flex-row justify-content-between pb-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        mit Annanas (+1.00€)
+                                    </label>
+                                </div>
         
-        <div>
-            <div>
-                Restaurant-Top-Placeholder
-            </div>
-    
-            <div>
-                searchbar-Placeholder
-            </div>
-    
-            <div>
-                Gerichte-Placeholder
+                                <div style="font-size: small; color: blue;">
+                                    Produktinfo
+                                </div>
+                            </div>
+                            <div >
+                                mehr anzeigen
+                            </div>
+                            <div class="d-flex flex-row justify-content-between align-items-center pt-3 pb-3">
+                                <div class="border d-flex flex-row justify-content-between " style="height: 36px; width: 128px; background-color: white;">
+                                    <div class="d-flex justify-content-center p-2" style="  width: 30%;">
+                                        <img src=".\img\minus_grey.png" alt="">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center bold" style="color: #007bff; font-size: large;  width: 30%;">
+                                        1
+                                    </div>
+                                    <div class="d-flex justify-content-center p-2" style="  width: 30%;">
+                                        <img src=".\img\plus_grey.png" alt="">
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary  bold" style="width:60%;" >9,99€</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="basket_box">
-            warenkorb-placeholder
+        <div class="basket_box shadow ">
+            <div class="sticky-top ">
+                <div class="p-3 border text-center" style="height:60px; color: rgba(0, 0, 0,0.65);"> <b>Warenkorb</b>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center pt-5 ">
+                    <img src=".\img\basket.png" style="height: 55px; width: 55px;" alt="">
+                    <div class="text-center pb-5" style="color: rgba(0, 0, 0,0.55);">
+                        Wähle leckere Gerichte aus der Karte und bestelle Dein Menü.
+                    </div>
+                    <div id="basket_content">
+                        test
+                    </div>
+                    <div id="basket_price" class="pt-3 pb-3 border-top border-bottom " style="width:90%;">
+                        <div class="d-flex flex-row justify-content-between pt-2">
+                            <div>Zwischensume</div>
+                            <div id="subtotal_price">0,00€</div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between bold pt-2">
+                            <div>Gesamt</div>
+                            <div id="total_price">0,00€</div>
+                        </div>
+                    </div>
+                    <div class="text-center p-3" style="font-size: small; color: rgba(0, 0, 0,0.55);">
+                        Leider kannst Du noch nicht bestellen. Euro Pizza liefert erst ab einem Mindestbestellwert von
+                        11,00 € (exkl. Lieferkosten).
+                    </div>
+                    <button class="btn btn-secondary btn-lg bold" style="height: 64px; width:90%;" disabled>Bestellen</button>
+
+
+                </div>
+            </div>
+
         </div>
     </div>
 
-    
 
-    
+
+
 </body>
+
 </html>

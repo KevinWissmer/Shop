@@ -3,8 +3,21 @@
     flex-direction: row;
 }
 
+.restaurant_box{
+    width: calc(100% - 344px);
+    display: flex;
+    flex-direction: column ;
+    height:2000px;
+}
+
+.restaurant_box_img{
+    object-fit: cover;
+    height:222px;
+    width: 100%;
+}
+
 .topnav {
-    height: 100px;
+    height: 74px;
     background-color: #FF8000;
     padding-left:32px;
     padding-right:32px;
@@ -14,7 +27,37 @@
 }
 
 .basket_box {
-    width: 300px;
-    height:100%;
-    background-color: lightgray;
+
+    width: 344px;
+
+
+}
+
+.category_bar{
+    height: 74px;
+    background-color: lightblue;
+}
+
+.dishes{
+    background-color: white;
+}
+
+.headline_medium{
+    font-size: 21px;
+}
+
+.ftc_orange{
+    color: #FF8000;
+}
+
+.bold{
+    font-weight: bold !important;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.dish_hover:hover {
+    background-color: #ff800033;
 }
