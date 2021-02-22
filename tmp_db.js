@@ -1,10 +1,11 @@
-let dish = [
+let dishes = [
     {
     'name': 'Pizza Krabben',
     'description': 'mit Krabben und Peperoni',
     'basic_price': '8,50€',
     'productinfo': 'soon to be added',
     'addon_description': 'Wahl aus: mit Ananas, mit Champignons, mit Ei, mit Gewürzen, scharf, mit Käse im Rand und mehr.',
+    'addon_categories': [{'name': 'Größe', 'description': 'Wählen Sie eine Größe:'},{'name': 'Extras', 'description': 'Ihre Extras:'},{'name': 'Sonderwunsch', 'description': 'Ihre Sonderwünsche:'}],
     'addons': [
         {
             'category': 'Größe',
@@ -74,6 +75,7 @@ let dish = [
     'basic_price': '6,50€',
     'productinfo': 'soon to be added',
     'addon_description': 'Wahl aus: mit Ananas, mit Champignons, mit Ei, mit Gewürzen, scharf, mit Käse im Rand und mehr.',
+    'addon_categories': [{'name': 'Größe', 'description': 'Wählen Sie eine Größe:'},{'name': 'Extras', 'description': 'Ihre Extras:'},{'name': 'Sonderwunsch', 'description': 'Ihre Sonderwünsche:'}],
     'addons': [
         {
             'category': 'Größe',
@@ -143,6 +145,7 @@ let dish = [
     'basic_price': '8,00€',
     'productinfo': 'soon to be added',
     'addon_description': 'Wahl aus: mit Ananas, mit Champignons, mit Ei, mit Gewürzen, scharf, mit Käse im Rand und mehr.',
+    'addon_categories': [{'name': 'Größe', 'description': 'Wählen Sie eine Größe:'},{'name': 'Extras', 'description': 'Ihre Extras:'},{'name': 'Sonderwunsch', 'description': 'Ihre Sonderwünsche:'}],
     'addons': [
         {
             'category': 'Größe',

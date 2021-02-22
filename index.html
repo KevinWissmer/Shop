@@ -13,7 +13,7 @@
     <script src=".\script\template.js"></script>
 </head>
 
-<body>
+<body onload="onload_restaurant_page(dishes)">
     <div class="topnav">
         <img height="60%" src=".\img\logo.jpg" alt="">
         <p>menü-placeholder</p>
@@ -24,11 +24,11 @@
         <div class="restaurant_box">
             <div>
                 <img class="restaurant_box_img" src=".\img\bg_pizza.jpg" alt="">
-                <div class="d-flex justify-content-between p-3">
+                <div class="d-flex justify-content-between">
                     <div>
                         <p>Restaurant-Top-Placeholder</p>
-                        <div>
-                            STERNE BEWERTUNG
+                        <div class="p-3" >
+                            STERNE - BEWERTUNG
                         </div>
                     </div>
                     <div>
@@ -43,7 +43,7 @@
                 <p>searchbar-Placeholder</p>
             </div>
 
-            <div class="dishes p-4" id="dishes">
+            <div class="dishes p-4" id="dishes" >
                 <div id="dish_1">
                     <div onclick="visibilityChange('bottom_dish_1')"
                         class="border p-3 d-flex flex-row justify-content-between dish_hover">
@@ -97,8 +97,7 @@
                                             <img src=".\img\plus_grey.png" alt="">
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary  bold" style="width:60%;"
-                                        onclick="showtest()">9,99€</button>
+                                    <button class="btn btn-primary  bold" style="width:60%;" >9,99€</button>
                                 </div>
                             </div>
 
