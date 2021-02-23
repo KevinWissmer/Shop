@@ -57,15 +57,13 @@ function single_dish_template_bottom(dish_list, index) {
                                 <img onclick="change_dish_amount(${index},'minus')" src="./img/minus_grey.png" alt="">
                             </div>
                             <div id="amount_order_${index}" class="d-flex justify-content-center align-items-center bold"
-                                style="color: #007bff; font-size: large;  width: 30%;">
-                                1
-                            </div>
+                                style="color: #007bff; font-size: large;  width: 30%;">1</div>
                             <div class="d-flex justify-content-center p-2" style="  width: 30%;">
                                 <img onclick="change_dish_amount(${index},'plus')" src="./img/plus_grey.png" alt="">
                             </div>
                         </div>
-                        <button id="btn_order_${index}" class="btn btn-primary  bold" style="width:60%;"
-                            onclick="showtest()">9,99€</button>
+                        <button id="btn_order_${index}" onclick="add_to_basket()" class="btn btn-primary  bold" style="width:60%;"
+                            ></button>
                     </div>
                 </div>
 
@@ -92,7 +90,7 @@ function addons_list_category_template(list,category,dishname) {
             list_category_template = list_category_template + `
             <div id="${i}" class="d-flex flex-row justify-content-between pb-1">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="addons_checkbox_${dishname}_${i}">
+                    <input onclick="refresh_dish_price()" class="form-check-input" type="checkbox" value="" id="addons_checkbox_${dishname}_${i}">
                     <label class="form-check-label" for="flexCheckDefault">
                     ${list[i].name} (+${list[i].price})
                     </label>
