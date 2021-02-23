@@ -198,3 +198,4 @@ function refresh_total() {
     document.getElementById('subtotal_price').innerHTML = float_to_currency(subtotal_price);
     document.getElementById('total_price').innerHTML = float_to_currency(subtotal_price);
 }
+
