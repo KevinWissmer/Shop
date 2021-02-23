@@ -2,11 +2,6 @@
 for all HTML generating code
 */
 
-/* 
-basket
-*/
-
-
 
 
 /* 
@@ -43,7 +38,7 @@ function single_dish_template_top(dish_list, index) {
 
 function single_dish_template_bottom(dish_list, index) {
     return `
-    <div id="bottom_dish_${index}" class="d-none p-3" style="  width: 100%; background-color: rgba(0, 0, 0,0.05);">
+    <div id="bottom_dish_${index}" class="d-none p-3 cb_bg_5" style="width: 100%; ">
             <div>
                 <div class="pl-5 pr-5 ">
                     
@@ -52,7 +47,7 @@ function single_dish_template_bottom(dish_list, index) {
                     
                     <div class="d-flex flex-row justify-content-between align-items-center pt-3 pb-3">
                         <div class="border d-flex flex-row justify-content-between "
-                            style="height: 36px; width: 128px; background-color: white;">
+                            style="height: 36px; width: 128px;">
                             <div class="d-flex justify-content-center p-2" style="  width: 30%;">
                                 <img onclick="change_dish_amount(${index},'minus')" src="./img/minus_grey.png" alt="">
                             </div>
@@ -75,14 +70,14 @@ function single_dish_template_bottom(dish_list, index) {
 function addons_list_template(list) {
     let list_template = '';
     for (let i = 0; i < list.addon_categories.length; i++) {
-        list_template = list_template + addons_list_category_template(list.addons, list.addon_categories[i],list.name);
+        list_template = list_template + addons_list_category_template(list.addons, list.addon_categories[i], list.name);
     }
 
     return list_template;
 }
 
 
-function addons_list_category_template(list,category,dishname) {
+function addons_list_category_template(list, category, dishname) {
     let list_category_template = `<div class="pt-2 pb-1">${category.description}</div>`;
 
     for (let i = 0; i < list.length; i++) {
@@ -107,4 +102,32 @@ function addons_list_category_template(list,category,dishname) {
     }
 
     return list_category_template;
+}
+
+
+
+
+/* 
+basket
+*/
+
+
+function single_basket_element_template(id) {
+    return `<div class="d-flex flex-row justify-content-between basket_box p-3" >
+            <div id="basket_amount_${id}" class="fs_xsmall pt-1">${basket[id].amount}x</div>
+            <div class="d-flex flex-column fs_small"  style="width: 90%;">
+                <div class="d-flex flex-row justify-content-between ">
+                    <div class="pr-3">${basket[id].name}</div>
+                    <div class="d-flex flex-row justify-content-between" style="width: 50%;">                                         
+                        <div >
+                            <img onclick="change_basket_amount(${id},'minus')" class="border rounded p-1" src="./img/minus_grey.png" alt="" style="width: 20px; height: 20px;">
+                            <img onclick="change_basket_amount(${id},'plus')" class="border rounded p-1" src="./img/plus_grey.png" alt="" style="width: 20px; height: 20px;">
+                        </div>
+                        <div id="basket_price_${id}">${float_to_currency(basket[id].amount * currency_to_float(basket[id].single_price))}</div>
+                        <div><img onclick="delete_basket_element(${id})" src="./img/delete-32_blue.png" alt="" style="width: 16px; height: 16px;"></div>
+                    </div>
+                </div>
+                <div class="fs_small cb_65 pt-2">${basket[id].addons}</div>
+            </div>
+        </div>`;
 }

@@ -52,27 +52,18 @@
             <div class="sticky-top ">
                 <div class="p-3 border text-center cb_65" style="height:60px;"> <b>Warenkorb</b>
                 </div>
-                <div class="d-flex flex-column justify-content-center align-items-center pt-5 ">
-                    <img src=".\img\basket.png" style="height: 55px; width: 55px;" alt="">
-                    <div class="text-center pb-5" style="color: rgba(0, 0, 0,0.55);">
+                <div  class="d-flex flex-column justify-content-center align-items-center pt-5 ">
+                    <div id="basket_placeholder" class="d-flex flex-column justify-content-center align-items-center">
+                        <img src=".\img\basket.png" style="height: 55px; width: 55px;" alt="">
+                        <div class="text-center pb-5 cb_55"  >
                         Wähle leckere Gerichte aus der Karte und bestelle Dein Menü.
-                    </div>
-                    <div id="basket_content">
-                        <div class="d-flex flex-row justify-content-between basket_box p-3" >
-                            <div>2x</div>
-                            <div class="d-flex flex-column "  style="width: 90%;">
-                                <div class="d-flex flex-row justify-content-between ">
-                                    <div class="pr-3">name</div>
-                                    <div>add sub</div>
-                                    <div>price</div>
-                                    <div>müll</div>
-                                </div>
-                                <div>Beschreibung</div>
-                            </div>
                         </div>
                     </div>
+                    <div id="basket_content">
+
+                    </div>
                     <div id="basket_price" class="pt-3 pb-3 border-top border-bottom " style="width:90%;">
-                        <div class="d-flex flex-row justify-content-between pt-2">
+                        <div class="d-flex flex-row justify-content-between pt-2 cb_65">
                             <div>Zwischensume</div>
                             <div id="subtotal_price">0,00€</div>
                         </div>
@@ -81,7 +72,7 @@
                             <div id="total_price">0,00€</div>
                         </div>
                     </div>
-                    <div class="text-center p-3" style="font-size: small; color: rgba(0, 0, 0,0.55);">
+                    <div class="text-center p-3 cb_55" style="font-size: small; ">
                         Leider kannst Du noch nicht bestellen. Euro Pizza liefert erst ab einem Mindestbestellwert von
                         11,00 € (exkl. Lieferkosten).
                     </div>

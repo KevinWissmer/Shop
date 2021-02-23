@@ -65,6 +65,7 @@ function get_addons_price(id) {
             basket_content.addons += ', ' + addon_list[i].name;
         }
     }
+    basket_content.addons = basket_content.addons.substring(2);
     return addon_price;
 }
 
@@ -78,6 +79,7 @@ function reset_old_dish(id) {
             document.getElementById(`addons_checkbox_${dishes[id].name}_${i}`).checked = false;
         }
     }
+    document.getElementById(`amount_order_${id}`).innerHTML = 1;
     basket_content = basket_empty;
 }
 
@@ -122,5 +124,64 @@ function add_to_basket() {
     basket_content = basket_empty;
     if (current_dish != -1) {
         reset_old_dish(current_dish);
+        current_dish = -1;
     }
+    refresh_basket();
+}
+
+/** visibility true or false */
+function d_none_change_to(id,visibility){
+    if(visibility){
+        if (document.getElementById(id).classList.value.includes("d-none")) {
+            document.getElementById(id).classList.remove("d-none");
+            document.getElementById(id).classList.add("d-flex");
+        } 
+    } else {
+        if (!document.getElementById(id).classList.value.includes("d-none")) {
+            document.getElementById(id).classList.remove("d-flex");
+            document.getElementById(id).classList.add("d-none");
+        }
+    }
+    
+}
+
+function refresh_basket(){
+    document.getElementById('basket_content').innerHTML = '';
+    if( basket.length == 0){
+        d_none_change_to('basket_placeholder',true);
+    }else{
+        d_none_change_to('basket_placeholder',false);
+    }
+    for (let i = 0; i < basket.length; i++) {
+        document.getElementById('basket_content').innerHTML += single_basket_element_template(i);
+    }
+    refresh_total();
+}
+
+
+function change_basket_amount(id, sort) {
+    current_amount = basket[id].amount;
+    if (sort == 'minus' && current_amount > 1) {
+        current_amount = current_amount - 1;
+    }
+    if (sort == 'plus') {
+        current_amount = Number(current_amount) + 1;
+    }
+    basket[id].amount = current_amount;
+    refresh_basket();
+}
+
+
+function delete_basket_element(id) {
+    basket.splice(id, 1);
+    refresh_basket();
+}
+
+function refresh_total() { 
+    let subtotal_price = 0 ;
+    for (let i = 0; i < basket.length; i++) {
+        subtotal_price = subtotal_price + (basket[i].amount * currency_to_float(basket[i].single_price));
+    }
+    document.getElementById('subtotal_price').innerHTML = float_to_currency(subtotal_price);
+    document.getElementById('total_price').innerHTML = float_to_currency(subtotal_price);
 }

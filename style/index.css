@@ -58,6 +58,14 @@
     font-style: italic;
 }
 
+.fs_small{
+    font-size: small;
+}
+
+.fs_xsmall{
+    font-size: x-small;
+}
+
 .dish_hover:hover {
     background-color: #ff800033;
 }
