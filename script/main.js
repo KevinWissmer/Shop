@@ -69,6 +69,16 @@ function get_addons_price(id) {
     return addon_price;
 }
 
+function pack_basket_content_object(id){
+
+    let basket_content_pack = {};
+    basket_content_pack.addons = basket_content.addons;
+    basket_content_pack.single_price = basket_content.single_price;
+    basket_content_pack.name = basket_content.name;
+    basket_content_pack.amount = basket_content.amount;
+    return basket_content_pack;
+}
+
 
 
 
@@ -120,12 +130,15 @@ function float_to_currency(float_num) {
 }
 
 function add_to_basket() {
-    basket.push(basket_content);
+    basket.push(pack_basket_content_object(current_dish));
+
+    console.log(pack_basket_content_object(current_dish));
     basket_content = basket_empty;
     if (current_dish != -1) {
         reset_old_dish(current_dish);
         current_dish = -1;
     }
+    
     refresh_basket();
 }
 
