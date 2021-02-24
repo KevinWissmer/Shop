@@ -1,12 +1,12 @@
 let restaurant = {
     'name': 'Paradise Pizza',
     'min_price': '11,00€',
-    'delivery_costs': '3,00€',
+    'delivery_costs': '2,00€',
     'delivery_costs_max': '50,00€',
     'information': 'coming soon',
     'logo_path': '',
     'rating': {
-        'rating_value': '3.4',
+        'rating_value': '47',
         'rating_number': '2135'
     }
 }

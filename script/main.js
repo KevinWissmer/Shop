@@ -1,18 +1,20 @@
 /*first try*/
 
-let basket=[];
+let basket = [];
 
 /* basket_content is used to save current selection of a single dish, this gets saved in basket array when finnished */
 let basket_content = {
     'name': '',
     'addons': '',
     'amount': '',
-    'single_price': ''};
+    'single_price': ''
+};
 let basket_empty = {
     'name': '',
     'addons': '',
     'amount': '',
-    'single_price': ''};
+    'single_price': ''
+};
 let current_dish = -1;
 let current_dish_price = 0;
 
@@ -69,7 +71,7 @@ function get_addons_price(id) {
     return addon_price;
 }
 
-function pack_basket_content_object(id){
+function pack_basket_content_object(id) {
 
     let basket_content_pack = {};
     basket_content_pack.addons = basket_content.addons;
@@ -112,10 +114,11 @@ function change_dish_amount(id, sort) {
 
 function onload_restaurant_page(dish_list) {
     document.getElementById('dishes').innerHTML = '';
-
+    set_restaurant_information();
     for (let index = 0; index < dish_list.length; index++) {
         document.getElementById('dishes').innerHTML += single_dish_template(dish_list, index);
     }
+    refresh_basket();
 }
 
 function currency_to_float(currency) {
@@ -138,32 +141,32 @@ function add_to_basket() {
         reset_old_dish(current_dish);
         current_dish = -1;
     }
-    
+
     refresh_basket();
 }
 
 /** visibility true or false */
-function d_none_change_to(id,visibility){
-    if(visibility){
+function d_none_change_to(id, visibility) {
+    if (visibility) {
         if (document.getElementById(id).classList.value.includes("d-none")) {
             document.getElementById(id).classList.remove("d-none");
             document.getElementById(id).classList.add("d-flex");
-        } 
+        }
     } else {
         if (!document.getElementById(id).classList.value.includes("d-none")) {
             document.getElementById(id).classList.remove("d-flex");
             document.getElementById(id).classList.add("d-none");
         }
     }
-    
+
 }
 
-function refresh_basket(){
+function refresh_basket() {
     document.getElementById('basket_content').innerHTML = '';
-    if( basket.length == 0){
-        d_none_change_to('basket_placeholder',true);
-    }else{
-        d_none_change_to('basket_placeholder',false);
+    if (basket.length == 0) {
+        d_none_change_to('basket_placeholder', true);
+    } else {
+        d_none_change_to('basket_placeholder', false);
     }
     for (let i = 0; i < basket.length; i++) {
         document.getElementById('basket_content').innerHTML += single_basket_element_template(i);
@@ -190,12 +193,61 @@ function delete_basket_element(id) {
     refresh_basket();
 }
 
-function refresh_total() { 
-    let subtotal_price = 0 ;
+function refresh_total() {
+    let subtotal_price = 0;
     for (let i = 0; i < basket.length; i++) {
         subtotal_price = subtotal_price + (basket[i].amount * currency_to_float(basket[i].single_price));
     }
     document.getElementById('subtotal_price').innerHTML = float_to_currency(subtotal_price);
-    document.getElementById('total_price').innerHTML = float_to_currency(subtotal_price);
+    document.getElementById('delivery_costs').innerHTML = restaurant.delivery_costs;
+    document.getElementById('total_price').innerHTML = float_to_currency(subtotal_price + currency_to_float(restaurant.delivery_costs));
+    refresh_lower_basket(subtotal_price);
 }
 
+function set_restaurant_information() {
+    document.getElementById('restaurant_name').innerHTML = restaurant.name;
+    document.getElementById('rating_bg').style.width = `${restaurant.rating.rating_value}%`;
+    document.getElementById('rating_number').innerHTML = `(${restaurant.rating.rating_number} Bewertungen)`;
+}
+
+function heart_status_change() {
+    if (document.getElementById('heart_img').dataset.status == 'grey') {
+        document.getElementById('heart_img').src = "img/heart.png";
+        document.getElementById('heart_img').dataset.status = 'not_grey';
+    } else {
+        document.getElementById('heart_img').src = "img/heart_grey.png";
+        document.getElementById('heart_img').dataset.status = 'grey';
+    }
+}
+
+function refresh_lower_basket(subtotal_price) {
+    refresh_missing_money(subtotal_price);
+    if (subtotal_price >= currency_to_float(restaurant.min_price)) {
+        document.getElementById('order_text').innerHTML = `Du hast den Mindestbestellwert von ${restaurant.min_price} erreicht und kannst jetzt fortfahren`;
+        set_order_btn('active');
+    } else {
+        document.getElementById('order_text').innerHTML = `Leider kannst Du noch nicht bestellen. Euro Pizza liefert erst ab einem Mindestbestellwert von
+        ${restaurant.min_price} (exkl. Lieferkosten).`;
+        set_order_btn('inactive');
+    }
+}
+
+function set_order_btn(status) {
+    if (status == 'inactive') {
+        document.getElementById('order_btn').disabled = true;
+        document.getElementById('order_btn').classList = 'btn btn-secondary btn-lg bold';
+    }
+    if(status == 'active'){
+        document.getElementById('order_btn').disabled = false;
+        document.getElementById('order_btn').classList = 'btn btn-primary btn-lg bold';
+    }
+}
+
+function refresh_missing_money(subtotal_price){
+    if (subtotal_price >= currency_to_float(restaurant.min_price)) {
+        d_none_change_to('missing_money_box', false);
+    } else {
+        document.getElementById('missing_money').innerHTML = `${float_to_currency(-1 * (subtotal_price - currency_to_float(restaurant.min_price)))}`; 
+        d_none_change_to('missing_money_box', true);
+    }
+}
