@@ -1,8 +1,8 @@
 /*first try*/
 
 let basket = [];
-let dishes=[];
-let restaurant={};
+let dishes = [];
+let restaurant = {};
 /* basket_content is used to save current selection of a single dish, this gets saved in basket array when finnished */
 let basket_content = {
     'name': '',
@@ -114,11 +114,11 @@ function change_dish_amount(id, sort) {
 
 
 function onload_restaurant_page() {
+    document.getElementById('complete_basket').innerHTML = basket_template();
+
     let r_id = new URLSearchParams(window.location.search).get('R_ID');
     restaurant = db[r_id][0];
     dishes = db[r_id][1];
-    console.log(db[r_id][1]);
-
     document.getElementById('dishes').innerHTML = '';
     set_restaurant_information();
     for (let i = 0; i < dishes.length; i++) {
@@ -243,17 +243,78 @@ function set_order_btn(status) {
         document.getElementById('order_btn').disabled = true;
         document.getElementById('order_btn').classList = 'btn btn-secondary btn-lg bold';
     }
-    if(status == 'active'){
+    if (status == 'active') {
         document.getElementById('order_btn').disabled = false;
         document.getElementById('order_btn').classList = 'btn btn-primary btn-lg bold';
     }
 }
 
-function refresh_missing_money(subtotal_price){
+function refresh_missing_money(subtotal_price) {
     if (subtotal_price >= currency_to_float(restaurant.min_price)) {
         d_none_change_to('missing_money_box', false);
     } else {
-        document.getElementById('missing_money').innerHTML = `${float_to_currency(-1 * (subtotal_price - currency_to_float(restaurant.min_price)))}`; 
+        document.getElementById('missing_money').innerHTML = `${float_to_currency(-1 * (subtotal_price - currency_to_float(restaurant.min_price)))}`;
         d_none_change_to('missing_money_box', true);
     }
 }
+
+
+function resp_basket_visibility() {
+    if (!document.getElementById('resp_basket_wrapper').classList.value.includes("b_0")) {
+        document.getElementById('resp_basket_wrapper').classList.add("b_0");
+        document.getElementById('complete_basket').innerHTML = 'unleer';
+        document.getElementById('responsive_handy_basket_content').innerHTML = basket_template();
+        refresh_basket();
+    } else {
+        document.getElementById('resp_basket_wrapper').classList.remove("b_0");
+    }
+}
+
+
+
+
+function asdasdasd(media_quer_gr) {
+    if (!media_quer_gr.matches) {
+        document.getElementById('responsive_handy_basket_content').innerHTML = 'unleer';
+        document.getElementById('complete_basket').innerHTML = basket_template();
+        refresh_basket();
+        if (document.getElementById('resp_basket_wrapper').classList.value.includes("b_0")){
+            document.getElementById('resp_basket_wrapper').classList.remove("b_0");
+        }
+    }
+}
+
+let media_quer_gr = window.matchMedia("(max-width: 801px)");
+media_quer_gr.addListener(asdasdasd);
+
+
+
+/*
+
+function myFunction(media_quer) {
+    if (media_quer.matches) {
+        document.getElementById('complete_basket').innerHTML = 'unleer';
+        document.getElementById('responsive_handy_basket_content').innerHTML = basket_template();
+        refresh_basket();
+    }
+}
+
+
+function asdasdasd(media_quer_gr) {
+    if (media_quer_gr.matches) {
+        document.getElementById('responsive_handy_basket_content').innerHTML = 'unleer';
+        document.getElementById('complete_basket').innerHTML = basket_template();
+        refresh_basket();
+    }
+}
+
+let media_quer = window.matchMedia("(max-width: 800px)");
+myFunction(media_quer);
+media_quer.addListener(myFunction);
+
+let media_quer_gr = window.matchMedia("(min-width: 801px)");
+asdasdasd(media_quer_gr);
+media_quer_gr.addListener(asdasdasd);
+
+*/
+

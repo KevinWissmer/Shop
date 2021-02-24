@@ -131,3 +131,42 @@ function single_basket_element_template(id) {
             </div>
         </div>`;
 }
+
+function basket_template(){
+    return `<div class="p-3 border text-center cb_65" style="height:60px;"> <b>Warenkorb</b>
+    </div>
+    <div  class="d-flex flex-column justify-content-center align-items-center pt-5 ">
+        <div id="basket_placeholder" class="d-flex flex-column justify-content-center align-items-center">
+            <img src="./img/basket.png" style="height: 55px; width: 55px;" alt="">
+            <div class="text-center pb-5 cb_55"  >
+            Wähle leckere Gerichte aus der Karte und bestelle Dein Menü.
+            </div>
+        </div>
+        <div id="basket_content">
+
+        </div>
+        <div id="basket_price" class="pt-3 pb-3 border-top border-bottom " style="width:90%;">
+            <div class="d-flex flex-row justify-content-between pt-2 cb_65">
+                <div>Zwischensume</div>
+                <div id="subtotal_price">0,00€</div>
+            </div>
+            <div class="d-flex flex-row justify-content-between pt-2 cb_65">
+                <div>Lieferkosten</div>
+                <div id="delivery_costs">0,00€</div>
+            </div>
+            <div class="d-flex flex-row justify-content-between bold pt-2">
+                <div>Gesamt</div>
+                <div id="total_price">0,00€</div>
+            </div>
+            <div id="missing_money_box" class="d-flex flex-row justify-content-between bold pt-2">
+                <div class="c_green">Benötigter Betrag, um den Mindestbestellwert zu erreichen</div>
+                <div id="missing_money" class="c_green"></div>
+            </div>
+        </div>
+        <div id="order_text" class="text-center p-3 cb_55" style="font-size: small; ">
+            
+        </div>
+        <button id="order_btn" class="btn btn-secondary btn-lg bold"  style="height: 64px; width:90%;"
+            disabled>Bestellen</button>
+    </div>`;
+}

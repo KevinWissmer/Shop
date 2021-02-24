@@ -1,68 +1,60 @@
-.content_box{
-    display: flex;
-    flex-direction: row;
-}
 
-.restaurant_box{
+
+.restaurant_box {
     width: calc(100% - 344px);
     display: flex;
-    flex-direction: column ;
-    height:2000px;
+    flex-direction: column;
 }
 
-.restaurant_box_img{
+.restaurant_box_img {
     object-fit: cover;
-    height:222px;
+    height: 222px;
     width: 100%;
 }
 
 .topnav {
     height: 74px;
     background-color: #FF8000;
-    padding-left:32px;
-    padding-right:32px;
+    padding-left: 32px;
+    padding-right: 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .basket_box {
-
     width: 400px;
-
-
 }
 
-.category_bar{
-
+.category_bar {
     background-color: #FF8000;
 }
 
-.dishes{
+.dishes {
     background-color: white;
 }
 
-.headline_medium{
+.headline_medium {
     font-size: 21px;
 }
 
-.ftc_orange{
+.ftc_orange {
     color: #FF8000;
 }
 
-.bold{
+.bold {
     font-weight: bold !important;
 }
 
-.italic{
+.italic {
     font-style: italic;
 }
 
-.fs_small{
+.fs_small {
     font-size: small;
 }
 
-.fs_xsmall{
+.fs_xsmall {
     font-size: x-small;
 }
 
@@ -70,27 +62,28 @@
     background-color: #ff800033;
 }
 
-.rating_front{
-    height: 100%; 
-    width: 100%; 
+.rating_front {
+    height: 100%;
+    width: 100%;
     z-index: 5;
     position: absolute!important;
     top: 0;
     left: 0;
 }
 
-.rating_bg{
-    height: 94%; 
-    width: 48%; 
+.rating_bg {
+    height: 94%;
+    width: 48%;
     z-index: 4;
     position: absolute!important;
     top: 3%;
     left: 0%;
     background-color: #FF8000;
 }
-.rating_bg2{
-    height: 94%; 
-    width: 100%; 
+
+.rating_bg2 {
+    height: 94%;
+    width: 100%;
     z-index: 3;
     position: absolute!important;
     top: 3%;
@@ -98,7 +91,59 @@
     background-color: rgb(150, 150, 150);
 }
 
-
-.to-do{
+.to-do {
     background-color: #0026ff;
 }
+
+
+.responsive_handy_basket_box {
+    display: none;
+}
+
+
+
+
+
+.b_0{
+    bottom: 0% !important;
+}
+
+@media screen and (max-width: 800px) {
+
+    .basket_box {
+        display: none;
+    }
+
+    .restaurant_box {
+        width: 100%;
+
+    }
+
+    .responsive_handy_basket_box {
+        z-index: 1001;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        display:unset !important;
+        background-color: white;
+        overflow: hidden;
+        bottom: -93%;
+    }
+
+
+    
+
+
+    .responsive_handy_basket_btn {
+        width: 100% !important;
+        height: 10%!important;
+        padding: 16px;
+    }
+    .responsive_handy_basket_content {
+        padding: 60px;
+        width: 100% !important;
+        height: 90% !important;
+    }
+
+}
+
