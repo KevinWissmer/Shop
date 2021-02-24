@@ -9,7 +9,7 @@ let restaurant = {
         'rating_value': '47',
         'rating_number': '2135'
     }
-}
+};
 
 let dishes = [
     {

@@ -1,7 +1,8 @@
 /*first try*/
 
 let basket = [];
-
+let dishes=[];
+let restaurant={};
 /* basket_content is used to save current selection of a single dish, this gets saved in basket array when finnished */
 let basket_content = {
     'name': '',
@@ -112,11 +113,16 @@ function change_dish_amount(id, sort) {
 
 
 
-function onload_restaurant_page(dish_list) {
+function onload_restaurant_page() {
+    let r_id = new URLSearchParams(window.location.search).get('R_ID');
+    restaurant = db[r_id][0];
+    dishes = db[r_id][1];
+    console.log(db[r_id][1]);
+
     document.getElementById('dishes').innerHTML = '';
     set_restaurant_information();
-    for (let i = 0; i < dish_list.length; i++) {
-        document.getElementById('dishes').innerHTML += single_dish_template(dish_list, i);
+    for (let i = 0; i < dishes.length; i++) {
+        document.getElementById('dishes').innerHTML += single_dish_template(dishes, i);
     }
     refresh_basket();
 }

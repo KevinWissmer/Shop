@@ -12,12 +12,13 @@
     <link rel="stylesheet" href=".\style\kevins_standard.css">
     <link rel="stylesheet" href=".\node_modules\bootstrap\dist\css\bootstrap.min.css">
 
-    <script src=".\tmp_db.js"></script>
+
+    <script src=".\db.js"></script>
     <script src=".\script\main.js"></script>
     <script src=".\script\template.js"></script>
 </head>
 
-<body onload="onload_restaurant_page(dishes)">
+<body onload="onload_restaurant_page()">
     <div class="topnav">
         <img height="60%" src=".\img\logo.jpg" alt="">
         <div class="to-do"><p>menü-placeholder</p></div>
@@ -99,7 +100,7 @@
                     <div id="order_text" class="text-center p-3 cb_55" style="font-size: small; ">
                         
                     </div>
-                    <button id="order_btn" class="btn btn-secondary btn-lg bold" style="height: 64px; width:90%;"
+                    <button id="order_btn" class="btn btn-secondary btn-lg bold"  style="height: 64px; width:90%;"
                         disabled>Bestellen</button>
                 </div>
             </div>
