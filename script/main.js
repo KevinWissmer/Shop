@@ -115,8 +115,8 @@ function change_dish_amount(id, sort) {
 function onload_restaurant_page(dish_list) {
     document.getElementById('dishes').innerHTML = '';
     set_restaurant_information();
-    for (let index = 0; index < dish_list.length; index++) {
-        document.getElementById('dishes').innerHTML += single_dish_template(dish_list, index);
+    for (let i = 0; i < dish_list.length; i++) {
+        document.getElementById('dishes').innerHTML += single_dish_template(dish_list, i);
     }
     refresh_basket();
 }
