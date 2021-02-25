@@ -7,7 +7,8 @@ let db = [
             'delivery_costs': '2,00€',
             'delivery_costs_max': '50,00€',
             'information': 'coming soon',
-            'logo_path': '',
+            'logo_path': './img/Paradise Pizza.png',
+            'main_img_path': './img/bg_pizza.jpg',
             'rating': {
                 'rating_value': '47',
                 'rating_number': '2135'
@@ -233,7 +234,8 @@ let db = [
             'delivery_costs': '1,50€',
             'delivery_costs_max': '30,00€',
             'information': 'coming soon',
-            'logo_path': '',
+            'logo_path': './img/Paradise Döner.png',
+            'main_img_path': './img/bg_doener.jpg',
             'rating': {
                 'rating_value': '89',
                 'rating_number': '198'
@@ -435,7 +437,8 @@ let db = [
             'delivery_costs': '0,00€',
             'delivery_costs_max': '15,00€',
             'information': 'coming soon',
-            'logo_path': '',
+            'logo_path': './img/Paradise Noodles.png',
+            'main_img_path': './img/bg_noodles.jpg',
             'rating': {
                 'rating_value': '30',
                 'rating_number': '121'

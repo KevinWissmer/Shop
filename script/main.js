@@ -115,7 +115,6 @@ function change_dish_amount(id, sort) {
 
 function onload_restaurant_page() {
     document.getElementById('complete_basket').innerHTML = basket_template();
-
     let r_id = new URLSearchParams(window.location.search).get('R_ID');
     restaurant = db[r_id][0];
     dishes = db[r_id][1];
@@ -140,14 +139,11 @@ function float_to_currency(float_num) {
 
 function add_to_basket() {
     basket.push(pack_basket_content_object(current_dish));
-
-    console.log(pack_basket_content_object(current_dish));
     basket_content = basket_empty;
     if (current_dish != -1) {
         reset_old_dish(current_dish);
         current_dish = -1;
     }
-
     refresh_basket();
 }
 
@@ -214,6 +210,8 @@ function set_restaurant_information() {
     document.getElementById('restaurant_name').innerHTML = restaurant.name;
     document.getElementById('rating_bg').style.width = `${restaurant.rating.rating_value}%`;
     document.getElementById('rating_number').innerHTML = `(${restaurant.rating.rating_number} Bewertungen)`;
+    document.getElementById('restaurant_logo_box').src = restaurant.logo_path;
+    document.getElementById('bg_restaurant').src = restaurant.main_img_path;
 }
 
 function heart_status_change() {
@@ -270,10 +268,7 @@ function resp_basket_visibility() {
     }
 }
 
-
-
-
-function asdasdasd(media_quer_gr) {
+function responsiv_basket(media_quer_gr) {
     if (!media_quer_gr.matches) {
         document.getElementById('responsive_handy_basket_content').innerHTML = 'unleer';
         document.getElementById('complete_basket').innerHTML = basket_template();
@@ -284,37 +279,6 @@ function asdasdasd(media_quer_gr) {
     }
 }
 
-let media_quer_gr = window.matchMedia("(max-width: 801px)");
-media_quer_gr.addListener(asdasdasd);
-
-
-
-/*
-
-function myFunction(media_quer) {
-    if (media_quer.matches) {
-        document.getElementById('complete_basket').innerHTML = 'unleer';
-        document.getElementById('responsive_handy_basket_content').innerHTML = basket_template();
-        refresh_basket();
-    }
-}
-
-
-function asdasdasd(media_quer_gr) {
-    if (media_quer_gr.matches) {
-        document.getElementById('responsive_handy_basket_content').innerHTML = 'unleer';
-        document.getElementById('complete_basket').innerHTML = basket_template();
-        refresh_basket();
-    }
-}
-
-let media_quer = window.matchMedia("(max-width: 800px)");
-myFunction(media_quer);
-media_quer.addListener(myFunction);
-
-let media_quer_gr = window.matchMedia("(min-width: 801px)");
-asdasdasd(media_quer_gr);
-media_quer_gr.addListener(asdasdasd);
-
-*/
+let media_quer_gr = window.matchMedia("(max-width: 900px)");
+media_quer_gr.addListener(responsiv_basket);
 

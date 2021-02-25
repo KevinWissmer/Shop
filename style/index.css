@@ -34,10 +34,6 @@
     background-color: white;
 }
 
-.headline_medium {
-    font-size: 21px;
-}
-
 .ftc_orange {
     color: #FF8000;
 }
@@ -100,7 +96,16 @@
     display: none;
 }
 
-
+.restaurant_logo_box{
+    height: 128px;
+    width: 128px;
+    background-color: lightgreen;
+    position: absolute!important;
+    top: calc(222px + 74px - (128px / 2));
+    left: calc(((100% - 400px) / 2) - (128px / 2));
+    border-radius: 4rem;
+    overflow: hidden;
+}
 
 
 
@@ -108,7 +113,22 @@
     bottom: 0% !important;
 }
 
-@media screen and (max-width: 800px) {
+.p_restaurant_description{
+    padding-top: 16px;
+}
+
+.restaurant_name{
+    width: calc(((100vw - 400px)/2) - 74px);
+}
+
+
+.headline_medium {
+    font-size: 21px;
+}
+
+
+
+@media screen and (max-width: 900px) {
 
     .basket_box {
         display: none;
@@ -117,6 +137,10 @@
     .restaurant_box {
         width: 100%;
 
+    }
+
+    .restaurant_name{
+        width: 100%;
     }
 
     .responsive_handy_basket_box {
@@ -130,9 +154,9 @@
         bottom: -93%;
     }
 
-
-    
-
+    .p_restaurant_description{
+        padding-top: 32px;
+    }
 
     .responsive_handy_basket_btn {
         width: 100% !important;
@@ -145,5 +169,27 @@
         height: 90% !important;
     }
 
+    .topnav {
+        height: 50px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .restaurant_box_img {
+        height: 170px;
+    }
+
+    .restaurant_logo_box{
+        
+        height: 100px;
+        width: 100px;
+        background-color: lightgreen;
+        position: absolute!important;
+        top: calc(170px + 50px - (100px / 2));
+        left: calc(50% - (100px / 2));
+        border-radius: 4rem;
+    }
+
 }
+
+
 

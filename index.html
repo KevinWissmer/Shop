@@ -20,46 +20,52 @@
 
 <body onload="onload_restaurant_page()">
     <div class="topnav">
-        <img height="60%" src=".\img\logo.jpg" alt="">
-        <div class="to-do"><p>menü-placeholder</p></div>
-        
+        <img height="60%" onclick="window.location.href = 'restaurant.html'" src=".\img\logo.jpg" alt="">
+        <div class="to-do">
+            <p>menü-placeholder</p>
+        </div>
+
     </div>
 
     <div class="d-flex flex-row">
         <div id="resp_basket_wrapper" class="responsive_handy_basket_box">
             <div class="d-flex flex-column p-2">
-                <div id="responsive_handy_basket_btn" onclick="resp_basket_visibility()" class="responsive_handy_basket_btn btn btn-primary responsive_handy_basket d-flex align-items-center justify-content-center bold btn-lg b_n93">
+                <div id="responsive_handy_basket_btn" onclick="resp_basket_visibility()"
+                    class="responsive_handy_basket_btn btn btn-primary responsive_handy_basket d-flex align-items-center justify-content-center bold btn-lg b_n93">
                     Warenkorb
                 </div>
                 <div id="responsive_handy_basket_content" class="responsive_handy_basket_content pt-3">leer
                 </div>
             </div>
         </div>
-        
+
         <div class="restaurant_box">
-            <div>
-                <img class="restaurant_box_img border-bottom " src=".\img\bg_pizza.jpg" alt="">
-                <div class="d-flex justify-content-between ">
+            <div class="d-flex flex-column">
+                <img id="restaurant_logo_box" class="restaurant_logo_box border" src=".\img\Paradise Noodles.png" alt="">
+                <img class="restaurant_box_img border-bottom " src=".\img\bg_pizza.jpg" id="bg_restaurant" alt="">
+                <div class="d-flex justify-content-between p_restaurant_description">
                     <div class="p-3">
-                        <div id="restaurant_name" class="headline_medium bold"></div>
-                        <div class="d-flex flex-row  ">
-                            <div class="position-relative ml-2 mb-2 "  style="height: 16px; width: 76px;">
-                                <img class="rating_front" src=".\img\5star_240x48.png"   alt="">
+                        <div id="restaurant_name" class="restaurant_name headline_medium bold"></div>
+                        <div class="d-flex flex-row pt-2 ">
+                            <div class="position-relative ml-2 mb-2 " style="height: 16px; width: 76px;">
+                                <img class="rating_front " src=".\img\5star_240x48.png" alt="">
                                 <div id="rating_bg" class="rating_bg"></div>
-                                <div   class="rating_bg2"></div>
+                                <div class="rating_bg2"></div>
                             </div>
                             <div id="rating_number" class="ftc_orange fs_small pl-2 ">
-                                                           
+
                             </div>
                         </div>
-                        
+
                     </div>
-                    <div class="d-flex justify-content-center p-3"> 
+                    <div class="d-flex justify-content-center p-3">
                         <div class="border " style="height: 32px; width: 32px;">
-                            <img  src=".\img\warning.png" style="height: 100%; width: 100%;"  alt="">
+                            <img src=".\img\warning.png" style="height: 100%; width: 100%;" alt="">
                         </div>
-                        <div class="border   d-flex justify-content-center align-items-center" onclick="heart_status_change()" style="height: 32px; width: 32px;">
-                            <img id="heart_img" data-status="grey" src=".\img\heart_grey.png"    style="height: 65%; width: 65%;" alt="">
+                        <div class="border   d-flex justify-content-center align-items-center"
+                            onclick="heart_status_change()" style="height: 32px; width: 32px;">
+                            <img id="heart_img" data-status="grey" src=".\img\heart_grey.png"
+                                style="height: 65%; width: 65%;" alt="">
                         </div>
                     </div>
 
@@ -70,7 +76,7 @@
                 <p>searchbar-Placeholder</p>
             </div>
 
-            <div class="dishes p-4" id="dishes" >        
+            <div class="dishes p-4" id="dishes">
             </div>
         </div>
 
