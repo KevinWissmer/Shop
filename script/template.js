@@ -8,6 +8,23 @@ for all HTML generating code
 single dish
 */
 
+function single_searchbar_template(category_list,index){
+    return `<a class="link_pure pr-3 " href="#category_${index}">${category_list[index]}</a>`;
+}
+
+function single_category_template(category_list, index) {
+    return `
+    <div id="category_${index}" class="mb-4 cb_bg_5">
+        <div style="height: 128px;"> Bild fehlt </div>
+        <div class="p-3 border-top headline_medium bold">${category_list[index]}</div>
+    </div>
+`;
+}
+
+function searchbar_template() {
+
+}
+
 function single_dish_template(dish_list, index) {
     return `
     <div id="dish_${index}" class="mb-4">
@@ -15,6 +32,7 @@ function single_dish_template(dish_list, index) {
         ${single_dish_template_bottom(dish_list, index)}
     </div>`;
 }
+
 
 
 function single_dish_template_top(dish_list, index) {

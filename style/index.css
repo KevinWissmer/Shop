@@ -27,11 +27,14 @@
 }
 
 .category_bar {
+    z-index: 10 !important	;
     background-color: #FF8000;
+    
 }
 
 .dishes {
     background-color: white;
+    
 }
 
 .ftc_orange {

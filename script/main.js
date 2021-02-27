@@ -118,12 +118,23 @@ function onload_restaurant_page() {
     let r_id = new URLSearchParams(window.location.search).get('R_ID');
     restaurant = db[r_id][0];
     dishes = db[r_id][1];
+    document.getElementById('categorybar_content').innerHTML = '';
     document.getElementById('dishes').innerHTML = '';
     set_restaurant_information();
-    for (let i = 0; i < dishes.length; i++) {
-        document.getElementById('dishes').innerHTML += single_dish_template(dishes, i);
-    }
+    load_dishes();
     refresh_basket();
+}
+
+function load_dishes() {
+    for (let j = 0; j < restaurant.categories.length; j++) {
+        document.getElementById('categorybar_content').innerHTML += single_searchbar_template(restaurant.categories,j);
+        document.getElementById('dishes').innerHTML += single_category_template(restaurant.categories, j);
+        for (let i = 0; i < dishes.length; i++) {
+            if (dishes[i].category == restaurant.categories[j]) {
+                document.getElementById('dishes').innerHTML += single_dish_template(dishes, i);
+            }
+        }
+    }
 }
 
 function currency_to_float(currency) {
@@ -279,7 +290,7 @@ function responsiv_basket(media_quer_gr) {
         document.getElementById('responsive_handy_basket_content').innerHTML = 'unleer';
         document.getElementById('complete_basket').innerHTML = basket_template();
         refresh_basket();
-        if (document.getElementById('resp_basket_wrapper').classList.value.includes("b_0")){
+        if (document.getElementById('resp_basket_wrapper').classList.value.includes("b_0")) {
             document.getElementById('resp_basket_wrapper').classList.remove("b_0");
         }
     }
