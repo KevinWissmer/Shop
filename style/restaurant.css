@@ -1,0 +1,25 @@
+.restaurants_box {
+    height: 128px;
+}
+
+.restaurants_box:hover {
+    background-color: #ff800033;
+}
+
+.content_box {
+    width: calc(100% - 200px);
+}
+
+.filter_box {
+    width: 200px;
+}
+
+.restaurants_box_logo {
+    height: 128px;
+    width: 128px;
+}
+
+.restaurants_logo{
+    width: 74px;
+    height: 74px;
+}

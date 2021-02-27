@@ -9,30 +9,32 @@
     <link rel="icon" type="image/png" href="img/logo_small.jpg">
 
     <link rel="stylesheet" href=".\style\index.css">
+    <link rel="stylesheet" href=".\style\restaurant.css">
     <link rel="stylesheet" href=".\style\kevins_standard.css">
     <link rel="stylesheet" href=".\node_modules\bootstrap\dist\css\bootstrap.min.css">
 
     <script src=".\db.js"></script>
+    <script src=".\script\template.js"></script>
+    <script src=".\script\restaurants.js"></script>
 
 </head>
 
-<body onload="">
+<body onload="load_restaurants()">
     <div class="topnav">
         <img height="60%" src=".\img\logo.jpg" alt="">
-        <div class="to-do"><p>menü-placeholder</p></div>
+        <div class="to-do">
+            <p>menü-placeholder</p>
+        </div>
     </div>
+    <div class=" d-flex flex-row">
+        <div class="filter_box p-3 pt-5"> einstellungen </div>
 
-    <div class="content_box d-flex flex-column">
-        <div>
-            <a href="index.html?R_ID=0"> Paradise Pizza</a>
-        </div>
-        <div>
-            <a href="index.html?R_ID=1"> Paradise Döner</a>
-        </div>
-        <div>
-            <a href="index.html?R_ID=2"> Paradise Noodles</a>
+        <div id="restaurants_content_box" class="content_box d-flex flex-column pt-5">
+
         </div>
     </div>
+    
+
 
 
 

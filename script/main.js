@@ -262,9 +262,15 @@ function resp_basket_visibility() {
         document.getElementById('resp_basket_wrapper').classList.add("b_0");
         document.getElementById('complete_basket').innerHTML = 'unleer';
         document.getElementById('responsive_handy_basket_content').innerHTML = basket_template();
+        document.getElementById('responsive_handy_basket_btn').classList.remove("btn-primary");
+        document.getElementById('responsive_handy_basket_btn').classList.add("btn-light");
+        document.getElementById('responsive_handy_basket_btn').innerHTML = ' <img src="./img/arrow-down-32.png" alt="" >';
         refresh_basket();
     } else {
         document.getElementById('resp_basket_wrapper').classList.remove("b_0");
+        document.getElementById('responsive_handy_basket_btn').innerHTML = 'Warenkorb';
+        document.getElementById('responsive_handy_basket_btn').classList.remove("btn-light");
+        document.getElementById('responsive_handy_basket_btn').classList.add("btn-primary");
     }
 }
 

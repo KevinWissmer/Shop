@@ -50,6 +50,10 @@
     font-size: small;
 }
 
+.fs_larger {
+    font-size: larger;
+}
+
 .fs_xsmall {
     font-size: x-small;
 }
@@ -99,7 +103,6 @@
 .restaurant_logo_box{
     height: 128px;
     width: 128px;
-    background-color: lightgreen;
     position: absolute!important;
     top: calc(222px + 74px - (128px / 2));
     left: calc(((100% - 400px) / 2) - (128px / 2));

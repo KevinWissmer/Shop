@@ -170,3 +170,24 @@ function basket_template(){
             disabled>Bestellen</button>
     </div>`;
 }
+
+function restaurants_single_element(id){
+    return `<div onclick="redirect_to_restaurant(${id})" class="restaurants_box border m-2 d-flex flex-row">
+    <div class="p-3 restaurants_box_logo border-right d-flex flex-column justify-content-center align-items-center">
+        <div><img class="restaurants_logo" src="${db[id][0].logo_path}" alt=""></div>
+        <div class="position-relative mt-2 " style="height: 16px; width: 76px;">
+            <img class="rating_front " src="./img/5star_240x48.png" alt="">
+            <div id="rating_bg" class="rating_bg" style=" width: ${db[id][0].rating.rating_value}% !important;"></div>
+            <div class="rating_bg2"></div>
+        </div>
+    </div>
+    <div class="p-2 d-flex flex-column justify-content-between">
+        <div class=" d-flex flex-column">
+            <div class="bold fs_larger">${db[id][0].name}</div>
+            <div class="fs_small cb_65">fehlt noch in datenbank</div>
+        </div>
+        <div class="fs_small cb_65">delivery cost time und minimum.....coming soon</div>
+    </div>
+
+</div>`;
+}

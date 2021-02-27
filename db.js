@@ -315,7 +315,7 @@ let db = [
             {
                 'name': 'Döner Kebab',
                 'description': 'mit gegrilltem Truthahnfleisch und Fladenbrot',
-                'basic_price': '8,50€',
+                'basic_price': '4,50€',
                 'productinfo': 'soon to be added',
                 'addon_description': 'Wahl aus: mit Ananas, mit Champignons, mit Ei, mit Gewürzen, scharf, mit Käse im Rand und mehr.',
                 'addon_categories': [{ 'name': 'Größe', 'description': 'Wählen Sie eine Größe:' }, { 'name': 'Extras', 'description': 'Ihre Extras:' }, { 'name': 'Sonderwunsch', 'description': 'Ihre Sonderwünsche:' }],
