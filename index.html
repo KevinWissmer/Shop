@@ -16,13 +16,18 @@
     <script src=".\db.js"></script>
     <script src=".\script\main.js"></script>
     <script src=".\script\template.js"></script>
+    <script src=".\script\restaurant.js"></script>
 </head>
 
 <body onload="onload_restaurant_page()">
     <div class="topnav">
-        <img height="60%" onclick="window.location.href = 'restaurant.html'" src=".\img\logo.jpg" alt="">
-        <div class="to-do">
-            <p>menü-placeholder</p>
+        <div style="height: 60%;" class="c_pointer">
+            <img height="60%" onclick="window.location.href = 'restaurant.html'" src=".\img\arrow_left.png" alt="">
+            <img height="100%" onclick="window.location.href = 'restaurant.html'" src=".\img\logo.jpg" alt="">
+        </div>
+        
+        <div style="height: 30%;" class="d-flex c_pointer align-items-center">
+            <img  height="100%" onclick="alert_not_included()"  src=".\img\menu.png" alt="">
         </div>
 
     </div>
@@ -45,7 +50,7 @@
                 <img class="restaurant_box_img border-bottom " src="" id="bg_restaurant" alt="">
                 <div class="d-flex justify-content-between p_restaurant_description">
                     <div class="p-3">
-                        <div id="restaurant_name" class="restaurant_name headline_medium bold"></div>
+                        <div id="restaurant_name" class="restaurant_name  bold"></div>
                         <div class="d-flex flex-row pt-2 ">
                             <div class="position-relative ml-2 mb-2 " style="height: 16px; width: 76px;">
                                 <img class="rating_front " src=".\img\5star_240x48.png" alt="">
@@ -59,10 +64,10 @@
 
                     </div>
                     <div class="d-flex justify-content-center p-3">
-                        <div class="border " style="height: 32px; width: 32px;">
-                            <img src=".\img\warning.png" style="height: 100%; width: 100%;" alt="">
+                        <div class="border c_pointer" style="height: 32px; width: 32px;">
+                            <img src=".\img\warning.png" onclick="alert_not_included()" style="height: 100%; width: 100%;" alt="">
                         </div>
-                        <div class="border   d-flex justify-content-center align-items-center"
+                        <div class="border  c_pointer d-flex justify-content-center align-items-center"
                             onclick="heart_status_change()" style="height: 32px; width: 32px;">
                             <img id="heart_img" data-status="grey" src=".\img\heart_grey.png"
                                 style="height: 65%; width: 65%;" alt="">
@@ -72,10 +77,9 @@
                 </div>
             </div>
 
-            <div class="category_bar bold p-3 d-flex cb_65 flex-row  sticky-top">
-                <div class="d-flex flex-row">
-                    <div>Springe zu</div>
-                    <div class="pl-1">-></div>
+            <div class="category_bar bold p-3 d-flex cb_65 align-items-center flex-row  sticky-top">
+                <div class="d-flex flex-row ">
+                    <img height="80%"  src=".\img\arrow_right.png" alt="">
                 </div>
                 
                 <div class="d-flex flex-row  pl-4" id="categorybar_content">

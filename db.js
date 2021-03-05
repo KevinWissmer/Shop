@@ -551,6 +551,41 @@ let db = [
                         'productinfo': 'soon to be added'
                     }
                 ]
+            },
+            {
+                'name': 'Käsesticks',
+                'category': 'Kleinigkeiten',
+                'description': '',
+                'basic_price': '1,50€',
+                'productinfo': 'soon to be added',
+                'addon_description': 'Wahl aus: Rot, Weiß oder Rotweiß.',
+                'addon_categories': [{ 'name': 'Größe', 'description': 'Wählen Sie eine Größe:' }, { 'name': 'Soße', 'description': 'Ihre Soße:' }],
+                'addons': [
+                    {
+                        'category': 'Größe',
+                        'name': '4 Stück',
+                        'price': '0,00€',
+                        'productinfo': 'soon to be added'
+                    },
+                    {
+                        'category': 'Größe',
+                        'name': '10 Stück',
+                        'price': '3,50€',
+                        'productinfo': 'soon to be added'
+                    },
+                    {
+                        'category': 'Soße',
+                        'name': 'Ketchup',
+                        'price': '0,50€',
+                        'productinfo': 'soon to be added'
+                    },
+                    {
+                        'category': 'Soße',
+                        'name': 'Mayonaise',
+                        'price': '0,50€',
+                        'productinfo': 'soon to be added'
+                    }
+                ]
             }
         ]
     ],
@@ -1344,6 +1379,41 @@ let db = [
                         'category': 'Größe',
                         'name': 'Groß',
                         'price': '1,50€',
+                        'productinfo': 'soon to be added'
+                    },
+                    {
+                        'category': 'Soße',
+                        'name': 'Ketchup',
+                        'price': '0,50€',
+                        'productinfo': 'soon to be added'
+                    },
+                    {
+                        'category': 'Soße',
+                        'name': 'Mayonaise',
+                        'price': '0,50€',
+                        'productinfo': 'soon to be added'
+                    }
+                ]
+            },
+            {
+                'name': 'Käsesticks',
+                'category': 'Kleinigkeiten',
+                'description': '',
+                'basic_price': '1,50€',
+                'productinfo': 'soon to be added',
+                'addon_description': 'Wahl aus: Rot, Weiß oder Rotweiß.',
+                'addon_categories': [{ 'name': 'Größe', 'description': 'Wählen Sie eine Größe:' }, { 'name': 'Soße', 'description': 'Ihre Soße:' }],
+                'addons': [
+                    {
+                        'category': 'Größe',
+                        'name': '4 Stück',
+                        'price': '0,00€',
+                        'productinfo': 'soon to be added'
+                    },
+                    {
+                        'category': 'Größe',
+                        'name': '10 Stück',
+                        'price': '3,50€',
                         'productinfo': 'soon to be added'
                     },
                     {

@@ -14,7 +14,7 @@ function single_searchbar_template(category_list,index){
 
 function single_category_template(category_list, index) {
     return `
-    <div id="category_${index}" class="mb-4 cb_bg_5">
+    <div id="category_${index}" class="mb-4 category_bar cb_65">
         <div style="height: 128px;"> Bild fehlt </div>
         <div class="p-3 border-top headline_medium bold">${category_list[index]}</div>
     </div>
@@ -38,7 +38,7 @@ function single_dish_template(dish_list, index) {
 function single_dish_template_top(dish_list, index) {
     return `
         <div onclick="open_dish('bottom_dish_${index}')"
-            class="border p-3 d-flex flex-row justify-content-between dish_hover">
+            class="c_pointer border p-3 d-flex flex-row justify-content-between dish_hover">
             <div d-flex flex-column justify-content-between>
                 <div class="headline_medium bold pb-1">${dish_list[index].name}</div>
                 <div class="pb-3">${dish_list[index].description}</div>
@@ -66,12 +66,12 @@ function single_dish_template_bottom(dish_list, index) {
                     <div class="d-flex flex-row justify-content-between align-items-center pt-3 pb-3">
                         <div class="border d-flex flex-row justify-content-between "
                             style="height: 36px; width: 128px;">
-                            <div class="d-flex justify-content-center p-2" style="  width: 30%;">
+                            <div class="c_pointer d-flex justify-content-center p-2" style="  width: 30%;">
                                 <img onclick="change_dish_amount(${index},'minus')" src="./img/minus_grey.png" alt="">
                             </div>
                             <div id="amount_order_${index}" class="d-flex justify-content-center align-items-center bold"
                                 style="color: #007bff; font-size: large;  width: 30%;">1</div>
-                            <div class="d-flex justify-content-center p-2" style="  width: 30%;">
+                            <div class="c_pointer d-flex justify-content-center p-2" style="  width: 30%;">
                                 <img onclick="change_dish_amount(${index},'plus')" src="./img/plus_grey.png" alt="">
                             </div>
                         </div>
@@ -103,14 +103,14 @@ function addons_list_category_template(list, category, dishname) {
             list_category_template = list_category_template + `
             <div id="${i}" class="d-flex flex-row justify-content-between pb-1">
                 <div class="form-check">
-                    <input onclick="refresh_dish_price()" class="form-check-input" type="checkbox" value="" id="addons_checkbox_${dishname}_${i}">
+                    <input onclick="refresh_dish_price()" class="form-check-input c_pointer" type="checkbox" value="" id="addons_checkbox_${dishname}_${i}">
                     <label class="form-check-label" for="flexCheckDefault">
                     ${list[i].name} (+${list[i].price})
                     </label>
                     
                 </div>
 
-                <div style="font-size: small; color: blue;">
+                <div class="product_info c_pointer" onclick="alert_not_included()">
                     Produktinfo
                 </div>
             </div> 
@@ -184,7 +184,7 @@ function basket_template(){
         <div id="order_text" class="text-center p-3 cb_55" style="font-size: small; ">
             
         </div>
-        <button id="order_btn" class="btn btn-secondary btn-lg bold"  style="height: 64px; width:90%;"
+        <button id="order_btn" onclick="alert_not_included()" class="btn btn-secondary btn-lg bold"  style="height: 64px; width:90%;"
             disabled>Bestellen</button>
     </div>`;
 }

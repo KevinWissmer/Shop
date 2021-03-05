@@ -173,9 +173,13 @@
     text-decoration: none;
 }
 .link_pure:hover {
-    color: rgba(255, 255, 255, 0.65);
+    color: #ff8000;
 }
 
 .c_green {
     color: #380;
+}
+
+.c_pointer{
+    cursor: pointer;
 }
