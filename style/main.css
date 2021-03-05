@@ -1,14 +1,4 @@
-.restaurant_box {
-    width: calc(100% - 344px);
-    display: flex;
-    flex-direction: column;
-}
 
-.restaurant_box_img {
-    object-fit: cover;
-    height: 222px;
-    width: 100%;
-}
 
 .product_info {
     font-size: small; 
@@ -29,14 +19,7 @@
     justify-content: space-between;
 }
 
-.basket_box {
-    width: 400px;
-}
 
-.category_bar {
-    z-index: 10 !important;
-    background-color: #F8F5F2;
-}
 
 .dishes {
     background-color: white;
@@ -103,9 +86,6 @@
     background-color: #0026ff;
 }
 
-.responsive_handy_basket_box {
-    display: none;
-}
 
 .restaurant_logo_box {
     height: 128px;
@@ -132,56 +112,4 @@
 
 .headline_medium {
     font-size: 21px;
-}
-
-@media screen and (max-width: 900px) {
-    .basket_box {
-        display: none;
-    }
-    .restaurant_box {
-        width: 100%;
-    }
-    .restaurant_name {
-        width: 100%;
-    }
-    .responsive_handy_basket_box {
-        z-index: 1001;
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        display: unset !important;
-        background-color: white;
-        overflow: hidden;
-        bottom: -93%;
-    }
-    .p_restaurant_description {
-        padding-top: 32px;
-    }
-    .responsive_handy_basket_btn {
-        width: 100% !important;
-        height: 10%!important;
-        padding: 16px;
-    }
-    .responsive_handy_basket_content {
-        padding: 60px;
-        width: 100% !important;
-        height: 90% !important;
-    }
-    .topnav {
-        height: 50px;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-    .restaurant_box_img {
-        height: 170px;
-    }
-    .restaurant_logo_box {
-        height: 100px;
-        width: 100px;
-        background-color: lightgreen;
-        position: absolute!important;
-        top: calc(170px + 50px - (100px / 2));
-        left: calc(50% - (100px / 2));
-        border-radius: 4rem;
-    }
 }

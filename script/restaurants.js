@@ -15,5 +15,5 @@ function load_restaurants(){
 
 function redirect_to_restaurant(id){
     console.log(id);
-    window.location.href=`index.html?R_ID=${id}`;
+    window.location.href=`restaurant.html?R_ID=${id}`;
 }
