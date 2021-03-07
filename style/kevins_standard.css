@@ -183,3 +183,7 @@
 .c_pointer{
     cursor: pointer;
 }
+
+.border_r_0 {
+    border-radius: 0 !important;
+}

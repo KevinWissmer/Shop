@@ -24,9 +24,85 @@
     height: 74px;
 }
 
+.pad_restaurants {
+    padding-left: 3rem!important;
+    padding-right: 3rem!important;
+    padding-top: 3rem!important;
+}
 
-@media screen and (max-width: 900px) {
+.font_size_restaurant{
+    font-size: 1.5rem;
+}
+
+.open_btn_filter{
+    display: none;
+}
+
+.l_290{
+    left: 282px !important;
+}
+
+.l_0{
+    left: 0px !important;
+}
+
+
+@media screen and (max-width: 800px) {
     .filter_box {
-        display: none;
+        display: flex;
+        position: absolute;
+        left: -272px;
+        flex-direction: column;
+        align-items: center;
+        z-index: 20;
+        background-color: white;
+        width: 300px;
+        height: 640px;
+        box-shadow: 2px 2px 5px  grey;
+    }
+
+    .topnav {
+        height: 50px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .restaurants_box_logo {
+        height: 128px;
+        width: 100px;
+    }
+
+    .open_btn_filter{
+        display: flex;
+        position: absolute;
+        align-items: center;
+        
+        background-color: #F8F5F2;
+        z-index: 21;
+        width: 36px;
+        height: 64px;
+        left: 10px;
+        top: calc(3rem + 320px);
+        border-radius: 3px;
+    }
+
+    .content_box{
+        width: 100%;
+    }
+
+    .pad_restaurants {
+        
+        padding-right: 1rem!important;
+        padding-top: 1rem!important;
+    }
+
+    .font_size_restaurant{
+        font-size: medium !important;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .font_size_restaurant{
+        font-size: small !important;
     }
 }

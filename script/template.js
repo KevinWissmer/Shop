@@ -209,3 +209,10 @@ function restaurants_single_element(id){
 
 </div>`;
 }
+
+function sorry_template(){
+    return `<div class="pt-5 d-flex justify-content-center cb_65 "><h1>Sorry ...</h1></div>
+    <div class="pt-3 d-flex justify-content-center cb_65 bold">
+      Wir konnten leider keine geeigneten Restaurants für Sie finden</div>`;
+}
+

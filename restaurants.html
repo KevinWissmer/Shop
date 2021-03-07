@@ -2,57 +2,169 @@
 <html lang="de">
 
 <head>
-    <title>Lieferando</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="img/logo_small.jpg">
+  <title>Lieferando</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/logo_small.jpg">
 
-    <link rel="stylesheet" href=".\style\main.css">
-    <link rel="stylesheet" href=".\style\restaurants.css">
-    <link rel="stylesheet" href=".\style\kevins_standard.css">
-    <link rel="stylesheet" href=".\node_modules\bootstrap\dist\css\bootstrap.min.css">
+  <link rel="stylesheet" href=".\style\main.css">
+  <link rel="stylesheet" href=".\style\restaurants.css">
+  <link rel="stylesheet" href=".\style\kevins_standard.css">
+  <link rel="stylesheet" href=".\node_modules\bootstrap\dist\css\bootstrap.min.css">
 
-    <script src=".\db.js"></script>
-    <script src=".\script\template.js"></script>
-    <script src=".\script\main.js"></script>
-    <script src=".\script\restaurants.js"></script>
+  <script src=".\db.js"></script>
+  <script src=".\script\template.js"></script>
+  <script src=".\script\main.js"></script>
+  <script src=".\script\restaurants.js"></script>
 
 </head>
 
 <body onload="load_restaurants()">
-    <div class="topnav">
-        <div style="height: 60%;">
-            
-            <img height="100%"  src=".\img\logo.jpg" alt="">
+  <div class="topnav">
+    <div style="height: 60%;">
+
+      <img height="100%" src=".\img\logo.jpg" alt="">
+    </div>
+
+    <div style="height: 30%;" class="d-flex align-items-center c_pointer">
+      <img height="100%" onclick="alert_not_included()" src=".\img\menu.png" alt="">
+    </div>
+
+  </div>
+  <div class=" d-flex flex-row">
+    <div onclick="show_hide_filter_menu()" id="filter_box_btn" class="border open_btn_filter">
+      <img id="filter_box_img" height="32px" src="img/arrow_r.png" alt="">
+    </div>
+    <div class=" filter_box  cb_65 p-3 pt-5" id="filter_box">
+      <h3>Filter</h3>
+      <div class="pt-4 pb-2">
+        <div>
+          <h5>Mindestbestellwert</h5>
         </div>
-        
-        <div style="height: 30%;" class="d-flex align-items-center c_pointer">
-            <img  height="100%" onclick="alert_not_included()" src=".\img\menu.png" alt="">
+        <div class="form-check">
+          <input onchange="filter_update('min_price','-1')" class="form-check-input" type="radio" name="min_price"
+            id="flex_min_price_1" checked>
+          <label class="orange_hover form-check-label" for="flex_min_price_1">
+            keine Präferenzen
+          </label>
         </div>
+        <div class="form-check">
+          <input onchange="filter_update('min_price','10')" class="form-check-input" type="radio" name="min_price"
+            id="flex_min_price_2">
+          <label class="orange_hover form-check-label" for="flex_min_price_2">
+            10,00€ oder weniger
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('min_price','15')" class="form-check-input" type="radio" name="min_price"
+            id="flex_min_price_3">
+          <label class="orange_hover form-check-label" for="flex_min_price_3">
+            15,00€ oder weniger
+          </label>
+        </div>
+      </div>
+
+      <div class="pt-4 pb-2">
+        <div>
+          <h5>Lieferkosten</h5>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('delivery_costs','-1')" class="form-check-input" type="radio"
+            name="delivery_costs" id="flex_delivery_costs_1" checked>
+          <label class="orange_hover form-check-label" for="flex_delivery_costs_1">
+            keine Präferenzen
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('delivery_costs','0')" class="form-check-input" type="radio"
+            name="delivery_costs" id="flex_delivery_costs_2">
+          <label class="orange_hover form-check-label" for="flex_delivery_costs_2">
+            Gratis
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('delivery_costs','1')" class="form-check-input" type="radio"
+            name="delivery_costs" id="flex_delivery_costs_3">
+          <label class="orange_hover form-check-label" for="flex_delivery_costs_3">
+            1,00€ oder weniger
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('delivery_costs','2,50')" class="form-check-input" type="radio"
+            name="delivery_costs" id="flex_delivery_costs_4">
+          <label class="orange_hover form-check-label" for="flex_delivery_costs_4">
+            2,50€ oder weniger
+          </label>
+        </div>
+      </div>
+
+      <div class="pt-4 pb-2">
+        <div>
+          <h5>Bewertung</h5>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('rating','-1')" class="form-check-input" type="radio" name="rating"
+            id="flex_rating_1" checked>
+          <label class="orange_hover form-check-label" for="flex_rating_1">
+            keine Präferenzen
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('rating','0')" class="form-check-input" type="radio" name="rating"
+            id="flex_rating_2">
+          <label class="orange_hover form-check-label" for="flex_rating_2">
+            1
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('rating','-20')" class="form-check-input" type="radio" name="rating"
+            id="flex_rating_3">
+          <label class="orange_hover form-check-label" for="flex_rating_3">
+            2
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('rating','-40')" class="form-check-input" type="radio" name="rating"
+            id="flex_rating_4">
+          <label class="orange_hover form-check-label" for="flex_rating_4">
+            3
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('rating','-60')" class="form-check-input" type="radio" name="rating"
+            id="flex_rating_5">
+          <label class="orange_hover form-check-label" for="flex_rating_5">
+            4
+          </label>
+        </div>
+        <div class="form-check">
+          <input onchange="filter_update('rating','-80')" class="form-check-input" type="radio" name="rating"
+            id="flex_rating_6">
+          <label class="orange_hover form-check-label" for="flex_rating_6">
+            5
+          </label>
+        </div>
+      </div>
 
     </div>
-    <div class=" d-flex flex-row">
-        <div class="filter_box p-3 pt-5"> einstellungen 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Default radio
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Default checked radio
-                </label>
-              </div>
-        </div>
+    <div class="content_box ">
 
-        <div id="restaurants_content_box" class="content_box d-flex flex-column pt-5">
-
+      <div class="pad_restaurants">
+        <div class="input-group mb-3">
+          <span class="input-group-text border_r_0" id="search_input_lable"><img height="16px" src="img/search.png" alt=""></span>
+          <input onkeyup="current_id_update()" type="text" class="form-control border_r_0" aria-label="Sizing example input"
+            aria-describedby="search_input_lablea" id="search_input">
         </div>
+      </div>
+
+      <div id="restaurants_content_box" class="pad_restaurants d-flex flex-column ">
+        ...
+      </div>
     </div>
-    
+
+  </div>
+
 
 
 

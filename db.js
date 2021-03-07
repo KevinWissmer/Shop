@@ -1,7 +1,8 @@
 let db = [
 
     [
-        {
+        {   
+            'id':'0',
             'name': 'Paradise Pizza',
             'min_price': '11,00€',
             'delivery_costs': '2,00€',
@@ -278,10 +279,11 @@ let db = [
         ]
     ],
     [
-        {
+        {   
+            'id':'1',
             'name': 'Paradise Döner',
             'min_price': '8,00€',
-            'delivery_costs': '1,50€',
+            'delivery_costs': '3,50€',
             'delivery_costs_max': '30,00€',
             'information': 'coming soon',
             'logo_path': './img/Paradise Döner.png',
@@ -591,6 +593,7 @@ let db = [
     ],
     [
         {
+            'id':'2',
             'name': 'Paradise Noodles',
             'min_price': '9,00€',
             'delivery_costs': '0,00€',
@@ -845,6 +848,7 @@ let db = [
     ],
     [
         {
+            'id':'3',
             'name': 'Pizza from Paradise',
             'min_price': '13,00€',
             'delivery_costs': '0,00€',
@@ -854,7 +858,7 @@ let db = [
             'main_img_path': './img/bg_pizza.jpg',
             'categories': ['Hauptgericht','Beilage','Getränke'],
             'rating': {
-                'rating_value': '84',
+                'rating_value': '79',
                 'rating_number': '66115'
             }
         },
@@ -1122,6 +1126,7 @@ let db = [
     ],
     [
         {
+            'id':'4',
             'name': 'Döner from Paradise',
             'min_price': '5,00€',
             'delivery_costs': '2,50€',
@@ -1434,6 +1439,7 @@ let db = [
     ],
     [
         {
+            'id':'5',
             'name': 'Noodles from Paradise',
             'min_price': '5,00€',
             'delivery_costs': '5,00€',

@@ -29,6 +29,10 @@
     color: #FF8000;
 }
 
+.orange_hover:hover {
+    color: #FF8000;
+}
+
 .bold {
     font-weight: bold !important;
 }

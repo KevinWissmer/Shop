@@ -110,16 +110,6 @@ function load_dishes() {
     }
 }
 
-function currency_to_float(currency) {
-    let float_num = parseFloat(currency.replace(",", "."));
-    return float_num;
-}
-
-function float_to_currency(float_num) {
-    float_num = (float_num.toFixed(2)).toString();
-    let currency = `${float_num.replace(".", ",")}€`;
-    return currency;
-}
 
 function add_to_basket() {
     basket.push(pack_basket_content_object(current_dish));
