@@ -1,3 +1,27 @@
+let category_img = [
+    {
+        'name': 'Hauptgericht',
+        'img_path': './img/main_dish.jpg'
+    },
+    {
+        'name': 'Getränke',
+        'img_path': './img/drinks.jpg'
+    },
+    {
+        'name': 'Beilage',
+        'img_path': './img/little_bites.jpg'
+    },
+    {
+        'name': 'Kleinigkeiten',
+        'img_path': './img/little_bites.jpg'
+    },
+    {
+        'name': 'Salat',
+        'img_path': './img/salad.jpg'
+    }
+];
+
+
 let db = [
 
     [

@@ -24,9 +24,21 @@
     display: none;
 }
 
+.pad_dish{
+    padding-right: 3rem!important;
+    padding-left: 3rem!important;
+}
 
+.pad_dish_extra{
+    padding-right: 3rem!important;
+    padding-left: 3rem!important;
+}
 
 @media screen and (max-width: 900px) {
+    .pad_dish{
+        padding-right: 1.5rem!important;
+        padding-left: 1.5rem!important;
+    }
     .basket_box {
         display: none;
     }

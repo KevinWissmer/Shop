@@ -19,6 +19,12 @@
     width: 128px;
 }
 
+.restaurants_box_img {
+    object-fit: cover;
+    height: 222px;
+    width: 100%;
+}
+
 .restaurants_logo{
     width: 74px;
     height: 74px;
@@ -38,13 +44,12 @@
     display: none;
 }
 
-.l_290{
-    left: 282px !important;
-}
+
 
 .l_0{
     left: 0px !important;
 }
+
 
 
 @media screen and (max-width: 800px) {
@@ -55,10 +60,38 @@
         flex-direction: column;
         align-items: center;
         z-index: 20;
+        width: 300px;
+        min-height: 600px;
+        height: 1000px !important;
+        
+        
+    }
+
+    .filter_box_light{
         background-color: white;
         width: 300px;
-        height: 640px;
+        height: 600px;
         box-shadow: 2px 2px 5px  grey;
+    }
+
+    .open_btn_filter{
+        display: flex;
+        position: absolute;
+        align-items: center;
+        
+        background-color: #F8F5F2;
+        z-index: 21;
+        width: 36px;
+        height: 64px;
+        left: calc(300px - 18px  );
+        top: calc(50% - 32px);
+        border-radius: 3px;
+    }
+
+    .restaurants_box_img {
+        object-fit: cover;
+        height: 190px;
+        width: 100%;
     }
 
     .topnav {
@@ -72,19 +105,7 @@
         width: 100px;
     }
 
-    .open_btn_filter{
-        display: flex;
-        position: absolute;
-        align-items: center;
-        
-        background-color: #F8F5F2;
-        z-index: 21;
-        width: 36px;
-        height: 64px;
-        left: 10px;
-        top: calc(3rem + 320px);
-        border-radius: 3px;
-    }
+    
 
     .content_box{
         width: 100%;
@@ -104,5 +125,18 @@
 @media screen and (max-width: 410px) {
     .font_size_restaurant{
         font-size: small !important;
+    }
+    .restaurants_box_img {
+        object-fit: cover;
+        height: 130px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .restaurants_box_img {
+        object-fit: cover;
+        height: 280px;
+        width: 100%;
     }
 }

@@ -87,14 +87,10 @@ function no_restaurants() {
 
 function show_hide_filter_menu() {
     if (document.getElementById('filter_box').classList.value.includes("l_0")) {
-        if (document.getElementById('filter_box_btn').classList.value.includes("l_290")) {
-            document.getElementById('filter_box').classList.remove("l_0");
-            document.getElementById('filter_box_btn').classList.remove("l_290");
-            document.getElementById('filter_box_img').src='img/arrow_r.png';
-        }
+        document.getElementById('filter_box').classList.remove("l_0");
+        document.getElementById('filter_box_img').src = 'img/arrow_r.png';
     } else {
         document.getElementById('filter_box').classList.add("l_0");
-        document.getElementById('filter_box_btn').classList.add("l_290");
-        document.getElementById('filter_box_img').src='img/arrow_l.png';
+        document.getElementById('filter_box_img').src = 'img/arrow_l.png';
     }
 }

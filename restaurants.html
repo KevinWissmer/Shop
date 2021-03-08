@@ -32,120 +32,151 @@
     </div>
 
   </div>
-  <div class=" d-flex flex-row">
-    <div onclick="show_hide_filter_menu()" id="filter_box_btn" class="border open_btn_filter">
-      <img id="filter_box_img" height="32px" src="img/arrow_r.png" alt="">
+  <div>
+    <div style="width: 100%">
+      <img class="restaurants_box_img" src=".\img\main_page.jpg" alt="">
     </div>
-    <div class=" filter_box  cb_65 p-3 pt-5" id="filter_box">
-      <h3>Filter</h3>
-      <div class="pt-4 pb-2">
+  </div>
+  <div class=" d-flex flex-row">
+    
+    <div class=" filter_box  cb_65 " id="filter_box">
+
+      <div class="sticky-top filter_box_light ">
+        <h3 class="p-4">Filter</h3>
+      <div class="  pl-4 pb-2">
+        <div onclick="show_hide_filter_menu()" id="filter_box_btn" class="border open_btn_filter c_pointer">
+          <img id="filter_box_img" height="32px" src="img/arrow_r.png" alt="">
+        </div>
         <div>
           <h5>Mindestbestellwert</h5>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('min_price','-1')" class="form-check-input" type="radio" name="min_price"
+          <input onchange="filter_update('min_price','-1')" class="c_pointer form-check-input" type="radio" name="min_price"
             id="flex_min_price_1" checked>
-          <label class="orange_hover form-check-label" for="flex_min_price_1">
+          <label class="c_pointer orange_hover form-check-label" for="flex_min_price_1">
             keine Präferenzen
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('min_price','10')" class="form-check-input" type="radio" name="min_price"
+          <input onchange="filter_update('min_price','10')" class="c_pointer form-check-input" type="radio" name="min_price"
             id="flex_min_price_2">
-          <label class="orange_hover form-check-label" for="flex_min_price_2">
+          <label class="c_pointer orange_hover form-check-label" for="flex_min_price_2">
             10,00€ oder weniger
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('min_price','15')" class="form-check-input" type="radio" name="min_price"
+          <input onchange="filter_update('min_price','15')" class="c_pointer form-check-input" type="radio" name="min_price"
             id="flex_min_price_3">
-          <label class="orange_hover form-check-label" for="flex_min_price_3">
+          <label class="c_pointer orange_hover form-check-label" for="flex_min_price_3">
             15,00€ oder weniger
           </label>
         </div>
       </div>
 
-      <div class="pt-4 pb-2">
+      <div class="pt-4 pl-4 pb-2">
         <div>
           <h5>Lieferkosten</h5>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('delivery_costs','-1')" class="form-check-input" type="radio"
+          <input onchange="filter_update('delivery_costs','-1')" class="c_pointer form-check-input" type="radio"
             name="delivery_costs" id="flex_delivery_costs_1" checked>
-          <label class="orange_hover form-check-label" for="flex_delivery_costs_1">
+          <label class="c_pointer orange_hover form-check-label" for="flex_delivery_costs_1">
             keine Präferenzen
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('delivery_costs','0')" class="form-check-input" type="radio"
+          <input onchange="filter_update('delivery_costs','0')" class="c_pointer form-check-input" type="radio"
             name="delivery_costs" id="flex_delivery_costs_2">
-          <label class="orange_hover form-check-label" for="flex_delivery_costs_2">
+          <label class="c_pointer orange_hover form-check-label" for="flex_delivery_costs_2">
             Gratis
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('delivery_costs','1')" class="form-check-input" type="radio"
+          <input onchange="filter_update('delivery_costs','1')" class="c_pointer form-check-input" type="radio"
             name="delivery_costs" id="flex_delivery_costs_3">
-          <label class="orange_hover form-check-label" for="flex_delivery_costs_3">
+          <label class="c_pointer orange_hover form-check-label" for="flex_delivery_costs_3">
             1,00€ oder weniger
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('delivery_costs','2,50')" class="form-check-input" type="radio"
+          <input onchange="filter_update('delivery_costs','2,50')" class="c_pointer form-check-input" type="radio"
             name="delivery_costs" id="flex_delivery_costs_4">
-          <label class="orange_hover form-check-label" for="flex_delivery_costs_4">
+          <label class="c_pointer orange_hover form-check-label" for="flex_delivery_costs_4">
             2,50€ oder weniger
           </label>
         </div>
       </div>
 
-      <div class="pt-4 pb-2">
+      <div class="pt-4 pl-4 pb-2">
         <div>
           <h5>Bewertung</h5>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('rating','-1')" class="form-check-input" type="radio" name="rating"
+          <input onchange="filter_update('rating','-1')" class="c_pointer form-check-input" type="radio" name="rating"
             id="flex_rating_1" checked>
-          <label class="orange_hover form-check-label" for="flex_rating_1">
+          <label class="c_pointer orange_hover form-check-label" for="flex_rating_1">
             keine Präferenzen
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('rating','0')" class="form-check-input" type="radio" name="rating"
+          <input onchange="filter_update('rating','0')" class="c_pointer form-check-input" type="radio" name="rating"
             id="flex_rating_2">
-          <label class="orange_hover form-check-label" for="flex_rating_2">
-            1
+          <label class="c_pointer orange_hover form-check-label" for="flex_rating_2">
+            <div class="d-flex justify-content-center">
+              <img height="100%" src=".\img\star.png" alt="">
+            </div>
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('rating','-20')" class="form-check-input" type="radio" name="rating"
+          <input onchange="filter_update('rating','-20')" class="c_pointer form-check-input" type="radio" name="rating"
             id="flex_rating_3">
-          <label class="orange_hover form-check-label" for="flex_rating_3">
-            2
+          <label class="c_pointer orange_hover form-check-label" for="flex_rating_3">
+            <div class="d-flex justify-content-center">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+            </div>
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('rating','-40')" class="form-check-input" type="radio" name="rating"
+          <input onchange="filter_update('rating','-40')" class="c_pointer form-check-input" type="radio" name="rating"
             id="flex_rating_4">
-          <label class="orange_hover form-check-label" for="flex_rating_4">
-            3
+          <label class="c_pointer orange_hover form-check-label" for="flex_rating_4">
+            <div class="d-flex justify-content-center">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+            </div>
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('rating','-60')" class="form-check-input" type="radio" name="rating"
+          <input onchange="filter_update('rating','-60')" class="c_pointer form-check-input" type="radio" name="rating"
             id="flex_rating_5">
-          <label class="orange_hover form-check-label" for="flex_rating_5">
-            4
+          <label class="c_pointer orange_hover form-check-label" for="flex_rating_5">
+            <div class=" d-flex justify-content-center">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+            </div>
           </label>
         </div>
         <div class="form-check">
-          <input onchange="filter_update('rating','-80')" class="form-check-input" type="radio" name="rating"
+          <input onchange="filter_update('rating','-80')" class="c_pointer form-check-input" type="radio" name="rating"
             id="flex_rating_6">
-          <label class="orange_hover form-check-label" for="flex_rating_6">
-            5
+          <label class="c_pointer orange_hover form-check-label" for="flex_rating_6">
+            <div class="d-flex justify-content-center">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+              <img height="100%" src=".\img\star.png" alt="">
+            </div>
           </label>
         </div>
       </div>
+      </div>
+
+      
 
     </div>
     <div class="content_box ">

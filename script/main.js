@@ -19,6 +19,13 @@ let basket_empty = {
 let current_dish = -1;
 let current_dish_price = 0;
 
+function get_cat_img_path(category){
+    for (let i = 0; i < category_img.length; i++) {
+        if(category_img[i].name == category){
+            return category_img[i].img_path;
+        }        
+    }
+}
 
 function visibilityChange(id) {
     if (!document.getElementById(id).classList.value.includes("d-none")) {

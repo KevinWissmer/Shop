@@ -14,8 +14,8 @@ function single_searchbar_template(category_list,index){
 
 function single_category_template(category_list, index) {
     return `
-    <div id="category_${index}" class="mb-4 category_bar cb_65">
-        <div style="height: 128px;"> Bild fehlt </div>
+    <div id="category_${index}" class="mb-4 mt-5 category_bar cb_65">
+        <div style="height: 150px;"> <img class="restaurant_box_img" style="height: 100% !important" src="${get_cat_img_path(category_list[index])}" alt=""> </div>
         <div class="p-3 border-top headline_medium bold">${category_list[index]}</div>
     </div>
 `;
@@ -58,7 +58,7 @@ function single_dish_template_bottom(dish_list, index) {
     return `
     <div id="bottom_dish_${index}" class="d-none p-3 cb_bg_5" style="width: 100%; ">
             <div>
-                <div class="pl-5 pr-5 ">
+                <div class="pad_dish">
                     
 
                     ${addons_list_template(dish_list[index])}
@@ -190,7 +190,7 @@ function basket_template(){
 }
 
 function restaurants_single_element(id){
-    return `<div onclick="redirect_to_restaurant(${id})" class="restaurants_box border m-2 d-flex flex-row">
+    return `<div onclick="redirect_to_restaurant(${id})" class="c_pointer restaurants_box border m-2 d-flex flex-row">
     <div class="p-3 restaurants_box_logo border-right d-flex flex-column justify-content-center align-items-center">
         <div><img class="restaurants_logo" src="${db[id][0].logo_path}" alt=""></div>
         <div class="position-relative mt-2 " style="height: 16px; width: 76px;">
@@ -202,9 +202,12 @@ function restaurants_single_element(id){
     <div class="p-2 d-flex flex-column justify-content-between">
         <div class=" d-flex flex-column">
             <div class="bold fs_larger">${db[id][0].name}</div>
-            <div class="fs_small cb_65">fehlt noch in datenbank</div>
+            <div class="fs_small cb_65"></div>
         </div>
-        <div class="fs_small cb_65">delivery cost time und minimum.....coming soon</div>
+        <div class="fs_small cb_65 d-flex flex-row ">
+        <div class="text-center"><img height="15px" src="./img/delivery_costs.jpg" alt=""> ${db[id][0].delivery_costs}</div>
+        <div class="pl-3 "><img height="15px" src="./img/min_costs.jpg" alt=""> ${db[id][0].min_price}</div>
+        </div>
     </div>
 
 </div>`;
