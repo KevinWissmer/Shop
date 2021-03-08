@@ -15,7 +15,7 @@ function single_searchbar_template(category_list,index){
 function single_category_template(category_list, index) {
     return `
     <div id="category_${index}" class="mb-4 mt-5 category_bar cb_65">
-        <div style="height: 150px;"> <img class="restaurant_box_img" style="height: 100% !important" src="${get_cat_img_path(category_list[index])}" alt=""> </div>
+        <div style="height: 200px;"> <img class="restaurant_box_img" style="height: 100% !important" src="${get_cat_img_path(category_list[index])}" alt=""> </div>
         <div class="p-3 border-top headline_medium bold">${category_list[index]}</div>
     </div>
 `;
@@ -131,7 +131,7 @@ basket
 
 
 function single_basket_element_template(id) {
-    return `<div class="d-flex flex-row justify-content-between basket_box p-3" >
+    return `<div class="d-flex flex-row justify-content-between basket_box pb-3 pt-3 pad_resp_basket" >
             <div id="basket_amount_${id}" class="fs_xsmall pt-1">${basket[id].amount}x</div>
             <div class="d-flex flex-column fs_small"  style="width: 90%;">
                 <div class="d-flex flex-row justify-content-between ">

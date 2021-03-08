@@ -234,11 +234,6 @@ function resp_basket_visibility() {
     }
 }
 
-
-
-
-
-
 function responsiv_basket(media_quer_gr) {
     if (!media_quer_gr.matches) {
         document.getElementById('responsive_handy_basket_content').innerHTML = 'unleer';

@@ -62,10 +62,7 @@ function d_none_change_to(id, visibility) {
             document.getElementById(id).classList.add("d-none");
         }
     }
-
 }
-
-
 
 function alert_not_included(){
     alert('not included');
